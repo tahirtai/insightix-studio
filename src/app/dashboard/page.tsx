@@ -3,9 +3,10 @@
 import React, { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
 import { useRouter } from "next/navigation";
+import { User } from "@supabase/supabase-js"; // import User type
 
 export default function Dashboard() {
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<User | null>(null); // use proper type
   const router = useRouter();
 
   useEffect(() => {
